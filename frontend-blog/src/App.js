@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import api from './api'
+import Routes from './routes'
 
 
 class App extends Component{
