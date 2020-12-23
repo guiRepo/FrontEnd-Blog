@@ -10,8 +10,8 @@ function Routes(){
     return(
         <BrowserRouter>
             <Switch>
-                <Route path="/" component={Main} />
-                <Route path="/users" component={ListagemUsers} />
+                <Route path="/" exact component={Main} />
+                <Route path="/users" exact component={ListagemUsers} />
                 <Route path="/posts" component={ListagemPosts} />
             </Switch>
         </BrowserRouter>
@@ -19,4 +19,4 @@ function Routes(){
 
 }
 
-export default Route
+export default Routes
