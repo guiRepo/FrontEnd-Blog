@@ -1,35 +1,35 @@
-import React, {Component} from 'react'
-import api from '../../api'
+import React, { Component } from 'react'
+import apiUser from '../../api/apiUser'
 
-class ListagemUsers extends Component{
+class ListagemUsers extends Component {
 
     state = {
-      users: [],
+        users: [],
     }
-  
-    async componentDidMount(){
-      const response = await api.get('')
-      
-      
-      this.setState({ users: response.data})
+
+    async componentDidMount() {
+        const response = await apiUser.get('')
+
+            console.log(response)
+        this.setState({ users: response.data })
     }
-  
-    render(){
-      const { users } = this.state
-  
-      return(
-        <div>
-          <h1> Listar usuarios </h1>
-          {console.log(users)}
-          {users.map(user => (            
-            <li key={user.id}>
-              <a href="#">{user.name}</a>
-            </li>
-          ))}
-        </div>
-      )
+
+    render() {
+        const { users } = this.state
+
+        return (
+            <div>
+                <h1> Listar usuarios </h1>
+                {console.log(users)}
+                {users.map(user => (
+                    <ul key={user.id}>
+                        <a>{user.name}</a>
+                    </ul>
+                ))}
+            </div>
+        )
     }
-  }
+}
 
 
 export default ListagemUsers
