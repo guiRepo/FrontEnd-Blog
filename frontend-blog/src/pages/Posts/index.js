@@ -23,7 +23,7 @@ class ListagemPosts extends Component {
                 {console.log(posts)}
                 {posts.map(posts => (
                     <ul key={posts.id}>
-                        <a href="#">{posts.title}</a>
+                        <a>{posts.title}</a>
                     </ul>
                 ))}
             </div>
