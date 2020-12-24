@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const Modal = ({ user }) => {
-    console.log(user)
+
     return (
         <ul>
             <h1>Detalhes do Usuario</h1>

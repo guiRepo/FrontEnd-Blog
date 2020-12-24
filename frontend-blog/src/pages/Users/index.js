@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import apiUser from '../../api/apiUser'
 
-import Modal from '../../components/Modal'
+import Modal from '../../components/ModalUser'
 
 class ListagemUsers extends Component {
 
@@ -12,7 +12,7 @@ class ListagemUsers extends Component {
     }
 
     async componentDidMount() {
-        const response = await apiUser.get('')
+        const response = await apiUser()
 
         console.log(response)
         this.setState({ users: response.data })

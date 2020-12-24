@@ -1,8 +1,5 @@
-import axios from 'axios';
+import api from './index'
 
-
-const apiPost = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/posts'
-});
+const apiPost = () => api.get('/posts')
 
 export default apiPost;
