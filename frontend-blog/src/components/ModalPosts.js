@@ -1,39 +1,24 @@
-import { render } from '@testing-library/react'
-import React, { Component } from 'react'
-import axios from 'axios'
-
+import React, { Component } from "react";
 
 class Modal extends Component {
-    constructor (props){
-        super(props)
-        this.state = {
-            comment: []
-        }
-    }
-
-
-    async componentDidMount() {
-        const response = await axios.get(`https://jsonplaceholder.typicode.com/post/${this.props.post.id}/comments`)
-        
-        this.setState({ comment: response.data })
- 
-    }
-
-    render() {
-        const { comment } = this.state
-
-        console.log(this.props.post)
-        console.log(comment)
-        return (
-            <ul>
-                <h1>Comentarios do post</h1>
-                <p>o texto é :{this.props.post.title}</p>
-                <p> o segundo texto é: {this.props.post.body}</p>
-
-            </ul >
-        )
-    }
+  render() {
+    return (
+      <ul>
+        <h1>Comentarios do post</h1>
+        {this.props.comment.length > 0 &&
+          this.props.comment.map((comment) => {
+            return (
+              <>
+                <p>{comment.email}</p>
+                <p>{comment.body}</p>
+                <p>-----------</p>
+              </>
+            );
+          })}
+        <p> o segundo texto é: {this.props.post.body}</p>
+      </ul>
+    );
+  }
 }
 
-
-export default Modal
+export default Modal;
