@@ -32,7 +32,7 @@ class ListagemPosts extends Component {
                         <button onClick={() => this.setState({ isModalVisible: true, post })}></button>
                     </ul>
                 ))}
-                {isModalVisible && <Modal post={post} />}
+                {isModalVisible && <Modal post={ post }/>}
             </div>
         )
     }
