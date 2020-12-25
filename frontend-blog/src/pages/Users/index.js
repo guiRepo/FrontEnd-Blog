@@ -54,6 +54,7 @@ class ListagemUsers extends Component {
                 {isModalVisible && <Modal user={user} />}
                 
             </div>
+            <Navbar color="dark">.</Navbar>
         </>
         )
     }

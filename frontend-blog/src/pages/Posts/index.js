@@ -1,8 +1,19 @@
 import React, { Component } from "react";
 import apiPost from "../../api/apiPost";
 import axios from "axios";
+import { 
+        Button, 
+        Navbar, 
+        ListGroup, 
+        ListGroupItem,
+        Modal, 
+        ModalHeader, 
+        ModalBody, 
+        ModalFooter } from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../App.css'
 
-import Modal from "../../components/ModalPosts.js";
+import ModalPost from "../../components/ModalPosts.js";
 
 class ListagemPosts extends Component {
   state = {
@@ -11,6 +22,7 @@ class ListagemPosts extends Component {
     comment: [],
     isModalVisible: false,
   };
+  
 
   async componentDidMount() {
     const response = await apiPost();
@@ -29,17 +41,24 @@ class ListagemPosts extends Component {
   render() {
     const { posts, post, isModalVisible, comment } = this.state;
     return (
+    <>
+    <Navbar color="dark">.</Navbar>
       <div>
-        <h1> Listar posts </h1>
+        <h1 className="tituloPosts"> Listar posts </h1>
 
         {posts.map((post) => (
+          <ListGroup>
           <ul key={post.id}>
+            <ListGroupItem>
             <h3>{post.title}</h3>
-            <button onClick={() => this.callComments(post)}></button>
+            <Button className="botaoComments" onClick={() => this.callComments(post)}>Comentarios</Button>
+            </ListGroupItem>
           </ul>
+          </ListGroup>
         ))}
-        {isModalVisible && <Modal post={post} comment={comment} />}
+        {isModalVisible && <ModalPost post={post} comment={comment} />}
       </div>
+    </>
     );
   }
 }

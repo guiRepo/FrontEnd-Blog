@@ -21,6 +21,12 @@
 .botaoText{
     color: blanchedalmond;
 }
+.botaoComments{
+    text-align: center;
+    margin-right: 70px;
+    width: 130px;
+    height: 50px;
+}
 
 body{
     background-color:MediumSlateBlue;
@@ -62,10 +68,20 @@ html, body {height:100%;}
     color: blanchedalmond;
     margin-bottom: 30px;
 }
+.tituloPosts{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: blanchedalmond;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
 
 .List{
     display: inline-block;
     align-content: center;
     text-align: center;
     width: 470px;
+}
+.textFooter{
+    text-align: center;
 }

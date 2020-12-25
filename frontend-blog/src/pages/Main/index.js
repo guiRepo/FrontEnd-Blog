@@ -13,11 +13,13 @@ const Main = (props) => {
                 <Button className="botao"><a className="botaoText"href="/users"> Visualizar Usuarios </a></Button>
                 <Button className="botao"><a className="botaoText" href="/posts"> Visualizar Posts </a></Button>
             </div>
-            <div className="footer">
+            <Navbar className="footer"color="dark">
+                <p className="textFooter">
                 Created by Guilherme Andre © guiRepo/FrontEnd-Blog
-            </div>
+                </p>
+                </Navbar>
         </>
     )
 }
 
-export default Main
+export default Main           
