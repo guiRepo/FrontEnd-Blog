@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import apiUser from '../../api/apiUser'
+import { Button, Navbar, ListGroup, ListGroupItem } from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../App.css'
 
 import Modal from '../../components/ModalUser'
 
@@ -26,19 +29,32 @@ class ListagemUsers extends Component {
         console.log(isModalVisible)
 
         return (
+
+            <>
+            <Navbar color="dark">.</Navbar>
             <div>
-                <h1> Listar usuarios </h1>
+                <h1 className="tituloUsers"> Listar usuarios </h1>
                 {console.log(users)}
                 {users.map(user => (
+                  <div className="buttons">  
+                   <ListGroup> 
                     <ul key={user.id}>
-                        <a>{user.name}</a>
-                        <button onClick={() => this.setState({ isModalVisible: true, user })}>Detalhes</button>
+                        <div className="itensLista">
+                        <ListGroupItem className="List">
+                            <a>{user.name}</a>
+                        </ListGroupItem>
+                        </div>
+                        <Button onClick={() => this.setState({ isModalVisible: true, user })}>Detalhes</Button>
                     </ul>
+                </ListGroup>
 
+                    </div>
                 )
                 )}
                 {isModalVisible && <Modal user={user} />}
+                
             </div>
+        </>
         )
     }
 }

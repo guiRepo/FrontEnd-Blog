@@ -1,0 +1,71 @@
+
+.titulo{
+    font-size:70px ;
+    font-family: 'Courier New', Courier, monospace;
+    color: blanchedalmond;
+    text-align: center;
+    margin-top:  100px;
+    margin-bottom:  100px;
+}
+.buttons{
+    text-align: center;
+}
+.botao{
+    display: inline-block;
+    text-align: center;
+    margin-right: 70px;
+    margin-left: 70px;
+    width: 280px;
+    height: 80px;
+}
+.botaoText{
+    color: blanchedalmond;
+}
+
+body{
+    background-color:MediumSlateBlue;
+}
+
+
+
+*  {
+    margin:0;
+    padding:0;
+}
+
+html, body {height:100%;}
+
+.geral {
+    min-height:100%;
+    position:relative;
+    width:800px;
+}
+
+.footer {
+    text-align: center;
+    color: blanchedalmond;
+    background-color: #343a40;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.content {overflow:hidden;}
+.aside {width:200px;}
+.fleft {float:left;}
+.fright {float:right;}
+
+
+.tituloUsers{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: blanchedalmond;
+    margin-bottom: 30px;
+}
+
+.List{
+    display: inline-block;
+    align-content: center;
+    text-align: center;
+    width: 470px;
+}
