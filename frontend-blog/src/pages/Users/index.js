@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import apiUser from '../../api/apiUser'
-import { Button, Navbar, ListGroup, ListGroupItem } from 'reactstrap'
+import { Button, 
+         Navbar,
+         NavbarBrand, 
+         ListGroup, 
+         ListGroupItem } from 'reactstrap'
+import { AiOutlineLeft } from "react-icons/ai";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css'
 
@@ -31,9 +37,9 @@ class ListagemUsers extends Component {
         return (
 
             <>
-            <Navbar color="dark">.</Navbar>
+            <Navbar color="dark" className="home"><NavbarBrand href="/" className="arrowBack"><AiOutlineLeft/></NavbarBrand></Navbar>
             <div>
-                <h1 className="tituloUsers"> Listar usuarios </h1>
+                <h1 className="tituloUsers"> Lista de Usuarios </h1>
                 {console.log(users)}
                 {users.map(user => (
                   <div className="buttons">  
@@ -47,7 +53,6 @@ class ListagemUsers extends Component {
                         <Button onClick={() => this.setState({ isModalVisible: true, user })}>Detalhes</Button>
                     </ul>
                 </ListGroup>
-
                     </div>
                 )
                 )}

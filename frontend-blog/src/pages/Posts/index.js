@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import apiPost from "../../api/apiPost";
 import axios from "axios";
-import { 
-        Button, 
-        Navbar, 
-        ListGroup, 
-        ListGroupItem,
-        Modal, 
-        ModalHeader, 
-        ModalBody, 
-        ModalFooter } from 'reactstrap'
+import { Button, 
+         Navbar,
+         NavbarBrand, 
+         ListGroup, 
+         ListGroupItem } from 'reactstrap'
+         
+import { AiOutlineLeft } from "react-icons/ai";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css'
 
@@ -22,7 +20,6 @@ class ListagemPosts extends Component {
     comment: [],
     isModalVisible: false,
   };
-  
 
   async componentDidMount() {
     const response = await apiPost();
@@ -42,9 +39,9 @@ class ListagemPosts extends Component {
     const { posts, post, isModalVisible, comment } = this.state;
     return (
     <>
-    <Navbar color="dark">.</Navbar>
+    <Navbar color="dark" className="home"><NavbarBrand href="/" className="arrowBack"><AiOutlineLeft/></NavbarBrand></Navbar>
       <div>
-        <h1 className="tituloPosts"> Listar posts </h1>
+        <h1 className="tituloPosts"> Lista de Posts </h1>
 
         {posts.map((post) => (
           <ListGroup>
@@ -52,12 +49,15 @@ class ListagemPosts extends Component {
             <ListGroupItem>
             <h3>{post.title}</h3>
             <Button className="botaoComments" onClick={() => this.callComments(post)}>Comentarios</Button>
+            <Button className="botaoComments" onClick={() => this.setState({isModalVisible:false})}>Fechar</Button>
             </ListGroupItem>
-          </ul>
-          </ListGroup>
+          </ul>          
+          </ListGroup>         
         ))}
+        <p></p> 
         {isModalVisible && <ModalPost post={post} comment={comment} />}
       </div>
+      <Navbar color="dark">.</Navbar>
     </>
     );
   }

@@ -4,12 +4,14 @@ import React from 'react'
 const Modal = ({ user }) => {
 
     return (
-        <ul>
-            <h1>Detalhes do Usuario</h1>
-        <p>{user.name}</p>
-        <p>{user.username}</p>
-        <p>{user.email}</p>
+        
+        <ul>            
+        <h1 className="tituloUsuario" >Detalhes do Usuario</h1>
+        <p className="detalhesUsuario">{user.name}</p>
+        <p className="detalhesUsuario">{user.username}</p>
+        <p className="detalhesUsuario">{user.email}</p>
         </ul>
+        
     )
 }
 
