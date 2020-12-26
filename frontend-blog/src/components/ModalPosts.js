@@ -1,27 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
+import {Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-
-class ModalPost extends Component {
-  render() {
-    return (
-      <div className="divComments"> 
-      <ul>
-        <h1 className="tituloComments">Comentarios do post</h1>
-        {this.props.comment.length > 0 &&
-          this.props.comment.map((comment) => {
-            return (
-              <>
+const ModalPost = ({ comment, post, isModalVisible, toggle }) => (
+  <Modal isOpen={isModalVisible}>
+    <ModalHeader className="modalHeader" toggle={toggle}>Comentarios do post</ModalHeader>
+      <ModalBody className="modalBody">
+      {comment.length > 0 &&
+        comment.map((comment) => {
+          return (
+            <>
                 <p className="contentComments">{comment.email}</p>
                 <p className="contentComments">{comment.body}</p>
                 <p className="contentComments">-----------</p>
-              </>
+            </>
             );
           })}
-        <p className="contentComments"> o segundo texto é: {this.props.post.body}</p>
-      </ul>
-      </div>
-    );
-  }
-}
+      </ModalBody>
+    <ModalFooter className="modalFooter"></ModalFooter>
+  </Modal>
+);
 
 export default ModalPost;

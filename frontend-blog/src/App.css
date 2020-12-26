@@ -57,7 +57,6 @@ html, body {height:100%;}
 }
 
 .footer {
-    text-align: center;
     color: blanchedalmond;
     background-color: #343a40;
     position:absolute;
@@ -89,8 +88,7 @@ html, body {height:100%;}
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     color: blanchedalmond;
-    margin-bottom: 0px;
-    margin-top: 60px;
+    margin-bottom: 30px;
 }
 .detalhesUsuario{    
     color: blanchedalmond;
@@ -112,14 +110,7 @@ html, body {height:100%;}
     text-align: center;
     width: 470px;
 }
-.textFooter{
-    text-align: center;
-}
-.divDetalhes{
-    border-color: black;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+
 .arrowBack{
     color: blanchedalmond ;
 }
@@ -128,4 +119,16 @@ html, body {height:100%;}
      color:blanchedalmond ; 
      text-decoration:none; 
      
+}
+
+
+.modalBody{
+    background-color: #343a40;
+}
+.modalHeader{
+    color: blanchedalmond;
+    background-color: MediumSlateBlue;
+}
+.modalFooter{
+    background-color: MediumSlateBlue;
 }

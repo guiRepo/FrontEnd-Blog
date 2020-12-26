@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import apiUser from '../../api/apiUser'
 import { Button, 
-         Navbar,
-         NavbarBrand, 
+         Navbar, 
          ListGroup, 
-         ListGroupItem } from 'reactstrap'
+         ListGroupItem,
+         NavbarBrand, } from 'reactstrap'
 import { AiOutlineLeft } from "react-icons/ai";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css'
 
-import Modal from '../../components/ModalUser'
+import ModalUsers from '../../components/ModalUser';
 
 class ListagemUsers extends Component {
 
@@ -22,11 +21,10 @@ class ListagemUsers extends Component {
 
     async componentDidMount() {
         const response = await apiUser()
+        this.setState({ isModalVisible: false , users: response.data })
+    }    
 
-        console.log(response)
-        this.setState({ users: response.data })
-    }
-
+    toggle = () => this.setState({ isModalVisible: false });
 
 
     render() {
@@ -36,30 +34,38 @@ class ListagemUsers extends Component {
 
         return (
 
-            <>
-            <Navbar color="dark" className="home"><NavbarBrand href="/" className="arrowBack"><AiOutlineLeft/></NavbarBrand></Navbar>
+        <>
+            <Navbar color="dark">
+                <NavbarBrand href="/" className="arrowBack">
+                    <AiOutlineLeft />
+                </NavbarBrand>
+            </Navbar>
             <div>
-                <h1 className="tituloUsers"> Lista de Usuarios </h1>
-                {console.log(users)}
+                <h1 className="tituloUsers"> Lista de Usuários </h1>
+                {console.log(user)}
                 {users.map(user => (
-                  <div className="buttons">  
+                <div className="buttons">  
                    <ListGroup> 
                     <ul key={user.id}>
-                        <div className="itensLista">
-                        <ListGroupItem className="List">
-                            <a>{user.name}</a>
-                        </ListGroupItem>
-                        </div>
-                        <Button onClick={() => this.setState({ isModalVisible: true, user })}>Detalhes</Button>
+                     <div className="itensLista">
+                      <ListGroupItem className="List">
+                        <h5>{user.name}</h5>
+                      </ListGroupItem>
+                     </div>
+                      <Button onClick={() => this.setState({ isModalVisible: true, user })}>Detalhes</Button>
                     </ul>
-                </ListGroup>
-                    </div>
-                )
-                )}
-                {isModalVisible && <Modal user={user} />}
-                
+                   </ListGroup>
+
+                </div>
+                ))}
+                {isModalVisible && (
+                    <ModalUsers 
+                        user={user} 
+                        isModalVisible={isModalVisible} 
+                        toggle={this.toggle}
+                />)}
             </div>
-            <Navbar color="dark">.</Navbar>
+            <Navbar color="dark"></Navbar>
         </>
         )
     }
