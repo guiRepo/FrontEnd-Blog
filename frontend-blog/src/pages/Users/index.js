@@ -29,8 +29,6 @@ class ListagemUsers extends Component {
 
     render() {
         const { users, user, isModalVisible } = this.state
-        console.log(user)
-        console.log(isModalVisible)
 
         return (
 
