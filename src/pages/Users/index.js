@@ -40,7 +40,6 @@ class ListagemUsers extends Component {
             </Navbar>
             <div>
                 <h1 className="tituloUsers"> Lista de Usuários </h1>
-                {console.log(user)}
                 {users.map(user => (
                 <div className="buttons">  
                    <ListGroup> 
