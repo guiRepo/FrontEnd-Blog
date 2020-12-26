@@ -30,7 +30,16 @@
     color:blanchedalmond ; 
     text-decoration:none; 
 }
+.botaoDetalhes{
+    font-family: 'Courier New', Courier, monospace;
+    color: blanchedalmond;
+    text-align: center;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
 .botaoComments{
+    font-family: 'Courier New', Courier, monospace;
+    color: blanchedalmond;
     text-align: center;
     margin-right: 70px;
     width: 130px;
@@ -54,6 +63,9 @@ html, body {height:100%;}
     min-height:100%;
     position:relative;
     width:800px;
+}
+.post{    
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .footer {
@@ -89,6 +101,10 @@ html, body {height:100%;}
     font-family: 'Courier New', Courier, monospace;
     color: blanchedalmond;
     margin-bottom: 30px;
+}
+.tituloNome{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
 .detalhesUsuario{    
     color: blanchedalmond;

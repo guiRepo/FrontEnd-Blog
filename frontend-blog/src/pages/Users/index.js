@@ -49,10 +49,10 @@ class ListagemUsers extends Component {
                     <ul key={user.id}>
                      <div className="itensLista">
                       <ListGroupItem className="List">
-                        <h5>{user.name}</h5>
+                        <h5 className="tituloNome" >{user.name}</h5>
                       </ListGroupItem>
                      </div>
-                      <Button onClick={() => this.setState({ isModalVisible: true, user })}>Detalhes</Button>
+                      <Button className="botaoDetalhes" onClick={() => this.setState({ isModalVisible: true, user })}>Detalhes</Button>
                     </ul>
                    </ListGroup>
 

@@ -53,7 +53,7 @@ class ListagemPosts extends Component {
               <ListGroup>
                 <ul key={post.id}>
                   <ListGroupItem>
-                    <h3>{post.title}</h3>
+                    <h3 className="post">{post.title}</h3>
                     <Button
                       className="botaoComments"
                       onClick={() => this.callComments(post)}
